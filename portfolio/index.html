@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vu Tien Dung - Data Analyst Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eefbf4',
+              100: '#d5f6e3',
+              200: '#aeeccb',
+              300: '#79dcaa',
+              400: '#42c584',
+              500: '#1aab68',
+              600: '#0e8a53',
+              700: '#0b6e44',
+              800: '#0c5738',
+              900: '#0b4830',
+              950: '#03281b',
+            },
+            surface: {
+              base: '#0a0f1a',
+              elevated: '#111827',
+              floating: '#1a2332',
+              glass: 'rgba(17, 24, 39, 0.7)',
+            }
+          },
+          fontFamily: {
+            display: ['Space Grotesk', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Prevent flash: apply theme before render -->
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <style>
+    /* ===== THEME VARIABLES ===== */
+    :root {
+      --bg-base: #eef2ff;
+      --bg-elevated: #f8fafb;
+      --bg-floating: #f1f5f9;
+      --text-primary: #1a1a2e;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --text-heading: #1a1a2e;
+      --border: rgba(26,171,104,0.12);
+      --nav-bg: rgba(255,255,255,0.85);
+      --modal-bg: #ffffff;
+      --card-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      --card-shadow-hover: 0 8px 30px rgba(0,0,0,0.1), 0 2px 8px rgba(0,0,0,0.06);
+      --orb-opacity-1: 0.06;
+      --orb-opacity-2: 0.04;
+      --grain-opacity: 0.015;
+      --hero-grid-opacity: 0.06;
+      --scrollbar-track: #f1f5f9;
+      --timeline-dot-bg: #ffffff;
+      --modal-close-bg: rgba(0,0,0,0.04);
+      --modal-close-hover: rgba(0,0,0,0.08);
+      --modal-close-border: rgba(0,0,0,0.08);
+      --modal-close-color: #64748b;
+      --modal-close-hover-color: #1a1a2e;
+      --code-bg: rgba(0,0,0,0.04);
+      --dashed-border: rgba(26,171,104,0.2);
+      --dashed-bg: rgba(26,171,104,0.03);
+      --nav-link-color: #64748b;
+      --nav-link-hover: #1a1a2e;
+      --nav-active-color: #1a1a2e;
+      --skill-tag-bg: rgba(26,171,104,0.06);
+      --skill-tag-color: #0e8a53;
+      --skill-tag-border: rgba(26,171,104,0.15);
+      --skill-tag-hover-bg: rgba(26,171,104,0.12);
+      --result-text: #94a3b8;
+      --logo-color: #1a1a2e;
+      --strong-color: #1a1a2e;
+      --modal-text: #475569;
+      --mobile-menu-bg: #ffffff;
+      --grid-bg-opacity: 1;
+    }
+
+    [data-theme="dark"] {
+      --bg-base: #0a0f1a;
+      --bg-elevated: #111827;
+      --bg-floating: #1a2332;
+      --text-primary: #e2e8f0;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --text-heading: #ffffff;
+      --border: rgba(26,171,104,0.08);
+      --nav-bg: rgba(10,15,26,0.85);
+      --modal-bg: #111827;
+      --card-shadow: 0 2px 12px rgba(0,0,0,0.3);
+      --card-shadow-hover: 0 8px 30px rgba(26,171,104,0.1), 0 2px 8px rgba(0,0,0,0.3);
+      --orb-opacity-1: 0.12;
+      --orb-opacity-2: 0.08;
+      --grain-opacity: 0.03;
+      --hero-grid-opacity: 0.03;
+      --scrollbar-track: #0a0f1a;
+      --timeline-dot-bg: #0a0f1a;
+      --modal-close-bg: rgba(255,255,255,0.05);
+      --modal-close-hover: rgba(255,255,255,0.1);
+      --modal-close-border: rgba(255,255,255,0.1);
+      --modal-close-color: #94a3b8;
+      --modal-close-hover-color: #ffffff;
+      --code-bg: rgba(255,255,255,0.05);
+      --dashed-border: rgba(26,171,104,0.15);
+      --dashed-bg: rgba(26,171,104,0.04);
+      --nav-link-color: #94a3b8;
+      --nav-link-hover: #e2e8f0;
+      --nav-active-color: #e2e8f0;
+      --skill-tag-bg: rgba(26,171,104,0.08);
+      --skill-tag-color: #79dcaa;
+      --skill-tag-border: rgba(26,171,104,0.15);
+      --skill-tag-hover-bg: rgba(26,171,104,0.15);
+      --result-text: #94a3b8;
+      --logo-color: #ffffff;
+      --strong-color: #e2e8f0;
+      --modal-text: #cbd5e1;
+      --mobile-menu-bg: #111827;
+      --grid-bg-opacity: 0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-base);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* Grain texture */
+    body::before {
+      content: '';
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      opacity: var(--grain-opacity);
+      pointer-events: none; z-index: 9999;
+    }
+
+    /* Ripple gradient background (light mode only) */
+    body::after {
+      content: '';
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(to bottom right, #eef2ff, #faf5ff, #fdf2f8);
+      pointer-events: none; z-index: 0;
+      opacity: var(--grid-bg-opacity);
+      transition: opacity 0.3s;
+    }
+
+    /* Spotlight cursor glow (light mode only) */
+    #spotlight-container {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none; z-index: 1; overflow: hidden;
+    }
+    #spotlight-glow {
+      position: absolute; border-radius: 50%; pointer-events: none;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(56,189,248,0.7) 0%, transparent 70%);
+      width: 280px; height: 280px;
+      transition: width 0.3s ease-out, height 0.3s ease-out, left 0.15s ease-out, top 0.15s ease-out;
+      will-change: left, top, width, height;
+    }
+    #spotlight-glow.moving {
+      width: 220px; height: 220px;
+    }
+    [data-theme="dark"] #spotlight-container { display: none; }
+
+    /* Flow field canvas (dark mode only) */
+    #flowfield-container {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 0; pointer-events: none; display: none;
+    }
+    #flowfield-container canvas {
+      display: block; width: 100%; height: 100%;
+    }
+    [data-theme="dark"] #flowfield-container {
+      display: block; pointer-events: auto;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+    ::-webkit-scrollbar-thumb { background: #1aab68; border-radius: 3px; }
+
+    /* Gradient orbs */
+    .orb-1 {
+      position: fixed; top: -200px; right: -200px; width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(26, 171, 104, var(--orb-opacity-1)) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+      transition: background 0.3s;
+    }
+    .orb-2 {
+      position: fixed; bottom: -300px; left: -200px; width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(14, 138, 83, var(--orb-opacity-2)) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+      transition: background 0.3s;
+    }
+
+    /* Section animations */
+    .reveal {
+      opacity: 0; transform: translateY(40px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Heading styles */
+    h1, h2, h3, h4, h5 { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.03em; }
+    p, li, span, a { line-height: 1.7; }
+
+    /* Card hover */
+    .card-hover {
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+      box-shadow: var(--card-shadow);
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    /* Button styles */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 22px; border-radius: 10px;
+      background: linear-gradient(135deg, #1aab68, #0e8a53);
+      color: #fff; font-weight: 600; font-size: 0.875rem;
+      border: 1px solid rgba(26, 171, 104, 0.3);
+      transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s;
+      cursor: pointer; text-decoration: none;
+      box-shadow: 0 2px 10px rgba(26, 171, 104, 0.2), 0 1px 3px rgba(0,0,0,0.2);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 6px 20px rgba(26, 171, 104, 0.3), 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .btn-primary:focus-visible {
+      outline: 2px solid #42c584; outline-offset: 2px;
+    }
+    .btn-primary:active {
+      transform: translateY(0) scale(0.98);
+      box-shadow: 0 1px 4px rgba(26, 171, 104, 0.2);
+    }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 20px; border-radius: 10px;
+      background: transparent;
+      color: #42c584; font-weight: 500; font-size: 0.875rem;
+      border: 1.5px solid rgba(26, 171, 104, 0.4);
+      transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1), background 0.25s, border-color 0.25s;
+      cursor: pointer; text-decoration: none;
+    }
+    .btn-outline:hover {
+      background: rgba(26, 171, 104, 0.08);
+      border-color: #1aab68;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(26, 171, 104, 0.15);
+    }
+    .btn-outline:focus-visible {
+      outline: 2px solid #42c584; outline-offset: 2px;
+    }
+    .btn-outline:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    /* Nav link */
+    .nav-link {
+      position: relative; color: var(--nav-link-color); font-size: 0.875rem; font-weight: 500;
+      text-decoration: none; padding: 6px 0;
+      transition: color 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+      background: #1aab68; border-radius: 1px;
+      transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .nav-link:hover { color: var(--nav-link-hover); }
+    .nav-link:hover::after { width: 100%; }
+    .nav-link:focus-visible { outline: 2px solid #42c584; outline-offset: 4px; border-radius: 2px; }
+
+    /* Skill tag */
+    .skill-tag {
+      padding: 6px 14px; border-radius: 8px; font-size: 0.8rem; font-weight: 500;
+      background: var(--skill-tag-bg); color: var(--skill-tag-color);
+      border: 1px solid var(--skill-tag-border);
+      transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), background 0.2s, border-color 0.2s;
+    }
+    .skill-tag:hover {
+      transform: scale(1.05);
+      background: var(--skill-tag-hover-bg);
+      border-color: rgba(26, 171, 104, 0.3);
+    }
+
+    /* Timeline */
+    .timeline-line {
+      position: absolute; left: 7px; top: 24px; bottom: 0; width: 2px;
+      background: linear-gradient(to bottom, #1aab68, rgba(26, 171, 104, 0.1));
+    }
+    .timeline-dot {
+      width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0;
+      background: var(--timeline-dot-bg); border: 2.5px solid #1aab68;
+      box-shadow: 0 0 12px rgba(26, 171, 104, 0.3);
+      transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s;
+    }
+    .timeline-item:hover .timeline-dot {
+      transform: scale(1.3);
+      box-shadow: 0 0 20px rgba(26, 171, 104, 0.5);
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(6px);
+      z-index: 10000; display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+      padding: 20px;
+    }
+    .modal-overlay.active { opacity: 1; pointer-events: auto; }
+    .modal-content {
+      background: var(--modal-bg); border: 1px solid var(--border);
+      border-radius: 16px; max-width: 700px; width: 100%; max-height: 85vh;
+      overflow-y: auto; padding: 36px;
+      transform: translateY(20px) scale(0.97);
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 40px rgba(26, 171, 104, 0.05);
+    }
+    .modal-overlay.active .modal-content {
+      transform: translateY(0) scale(1);
+    }
+    .modal-content::-webkit-scrollbar { width: 4px; }
+    .modal-content::-webkit-scrollbar-thumb { background: #1aab68; border-radius: 2px; }
+
+    .modal-close {
+      position: absolute; top: 16px; right: 16px; width: 36px; height: 36px;
+      border-radius: 10px; background: var(--modal-close-bg); border: 1px solid var(--modal-close-border);
+      color: var(--modal-close-color); display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 1.2rem;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+    .modal-close:hover { background: var(--modal-close-hover); color: var(--modal-close-hover-color); transform: scale(1.1); }
+    .modal-close:focus-visible { outline: 2px solid #42c584; outline-offset: 2px; }
+    .modal-close:active { transform: scale(0.95); }
+
+    /* Section divider */
+    .section-accent {
+      width: 48px; height: 4px; border-radius: 2px;
+      background: linear-gradient(90deg, #1aab68, #42c584);
+      margin-bottom: 16px;
+    }
+
+    /* Floating badge */
+    .float-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600;
+      background: rgba(26, 171, 104, 0.1); color: #42c584;
+      border: 1px solid rgba(26, 171, 104, 0.2);
+    }
+
+    /* Hero grid pattern */
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(26, 171, 104, var(--hero-grid-opacity)) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26, 171, 104, var(--hero-grid-opacity)) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black, transparent);
+    }
+
+    /* Mobile nav */
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .mobile-menu.open { transform: translateX(0); }
+
+    /* Theme toggle */
+    .theme-toggle {
+      width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--border);
+      background: var(--bg-elevated); color: var(--text-secondary);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), background 0.25s, border-color 0.25s, box-shadow 0.25s, color 0.25s;
+    }
+    .theme-toggle:hover {
+      transform: scale(1.1);
+      border-color: #1aab68;
+      background: rgba(26,171,104,0.08);
+      color: #1aab68;
+      box-shadow: 0 2px 10px rgba(26,171,104,0.15);
+    }
+    .theme-toggle:focus-visible {
+      outline: 2px solid #42c584; outline-offset: 2px;
+    }
+    .theme-toggle:active {
+      transform: scale(0.95);
+    }
+    .theme-toggle .icon-sun,
+    .theme-toggle .icon-moon { display: none; }
+    :root .theme-toggle .icon-sun { display: block; }
+    :root .theme-toggle .icon-moon { display: none; }
+    [data-theme="dark"] .theme-toggle .icon-sun { display: none; }
+    [data-theme="dark"] .theme-toggle .icon-moon { display: block; }
+
+    /* Award card image */
+    .award-img-area {
+      width: 100%; max-height: 180px; border-radius: 12px 12px 0 0; overflow: hidden; position: relative;
+      background: var(--bg-floating); display: flex; align-items: center; justify-content: center;
+    }
+    .award-img-area img {
+      width: 100%; max-height: 180px; display: block; object-fit: contain;
+    }
+    .award-img-overlay {
+      position: absolute; left: 0; right: 0; bottom: 0; height: 40px;
+      background: linear-gradient(to top, var(--bg-elevated) 0%, transparent 100%);
+    }
+
+    /* Project card image */
+    .project-img-area {
+      position: relative; width: 100%; max-height: 180px; overflow: hidden;
+      background: linear-gradient(135deg, #0b4830, #0e8a53);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .project-img-area img {
+      width: 100%; max-height: 180px; display: block; object-fit: contain;
+    }
+    .project-img-overlay {
+      position: absolute; left: 0; right: 0; bottom: 0; height: 40px;
+      background: linear-gradient(to top, var(--bg-elevated) 0%, transparent 100%);
+    }
+
+    @media (max-width: 768px) {
+      .modal-content { padding: 24px; margin: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background orbs -->
+  <div class="orb-1"></div>
+  <div class="orb-2"></div>
+
+  <!-- Spotlight cursor glow (light mode) -->
+  <div id="spotlight-container">
+    <div id="spotlight-glow"></div>
+  </div>
+
+  <!-- Flow field particles (dark mode) -->
+  <div id="flowfield-container">
+    <canvas id="flowfield-canvas"></canvas>
+  </div>
+
+  <!-- Navigation -->
+  <nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--nav-bg); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border);">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between;">
+      <a href="#hero" style="text-decoration: none;">
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--logo-color); letter-spacing: -0.03em;">
+          <span style="color: #1aab68;">D</span>ung<span style="color: #1aab68;">.</span>
+        </span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 32px;" class="hidden md:flex">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#awards" class="nav-link">Awards</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#certificates" class="nav-link">Certificates</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <!-- Theme toggle -->
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode">
+          <svg class="icon-sun" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="4"/><path d="M10 1v2M10 17v2M3.3 3.3l1.4 1.4M15.3 15.3l1.4 1.4M1 10h2M17 10h2M3.3 16.7l1.4-1.4M15.3 4.7l1.4-1.4"/></svg>
+          <svg class="icon-moon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 12.5a7.5 7.5 0 1 1-10-10 5.5 5.5 0 0 0 10 10z"/></svg>
+        </button>
+        <!-- Mobile hamburger -->
+        <button onclick="toggleMobileMenu()" style="display: none; background: none; border: none; color: var(--text-primary); cursor: pointer; padding: 4px;" class="md-hide-btn" aria-label="Toggle menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu" style="position: fixed; top: 0; right: 0; bottom: 0; width: 280px; background: var(--mobile-menu-bg); border-left: 1px solid var(--border); padding: 80px 32px 32px; display: flex; flex-direction: column; gap: 24px; z-index: 1001;">
+      <button onclick="toggleMobileMenu()" style="position: absolute; top: 20px; right: 20px; background: none; border: none; color: var(--text-muted); cursor: pointer;" aria-label="Close menu">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <a href="#about" class="nav-link" onclick="toggleMobileMenu()">About</a>
+      <a href="#awards" class="nav-link" onclick="toggleMobileMenu()">Awards</a>
+      <a href="#experience" class="nav-link" onclick="toggleMobileMenu()">Experience</a>
+      <a href="#skills" class="nav-link" onclick="toggleMobileMenu()">Skills</a>
+      <a href="#projects" class="nav-link" onclick="toggleMobileMenu()">Projects</a>
+      <a href="#certificates" class="nav-link" onclick="toggleMobileMenu()">Certificates</a>
+      <a href="#contact" class="nav-link" onclick="toggleMobileMenu()">Contact</a>
+    </div>
+  </nav>
+
+  <style>
+    @media (max-width: 767px) {
+      .md-hide-btn { display: block !important; }
+      .hidden.md\:flex { display: none !important; }
+    }
+    @media (min-width: 768px) {
+      .md-hide-btn { display: none !important; }
+      .hidden.md\:flex { display: flex !important; }
+    }
+  </style>
+
+  <!-- ==================== HERO ==================== -->
+  <section id="hero" style="position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 120px 24px 80px; overflow: hidden;">
+    <div class="hero-grid"></div>
+    <div style="position: relative; z-index: 1; max-width: 800px; text-align: center;">
+      <div class="float-badge" style="margin: 0 auto 24px;">
+        <span style="width: 8px; height: 8px; border-radius: 50%; background: #42c584; animation: pulse 2s infinite;"></span>
+        Open to Opportunities
+      </div>
+      <style>@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }</style>
+
+      <h1 style="font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700; color: var(--text-heading); line-height: 1.1; margin-bottom: 20px;">
+        Hi, I'm <span style="background: linear-gradient(135deg, #42c584, #1aab68); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">V&#361; Ti&#7871;n D&#361;ng</span>
+      </h1>
+      <p style="font-size: clamp(1.1rem, 2.5vw, 1.35rem); color: var(--text-secondary); max-width: 600px; margin: 0 auto 40px; font-weight: 300;">
+        Data Analyst/Analytic Engineer transforming complex data into clear, actionable business insights with analytics, machine learning & storytelling.
+      </p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="#projects" class="btn-primary">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg>
+          View Projects
+        </a>
+        <a href="#contact" class="btn-outline">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Get in Touch
+        </a>
+      </div>
+
+      <!-- Stats -->
+      <div style="display: flex; gap: 48px; justify-content: center; margin-top: 64px; flex-wrap: wrap;">
+        <div>
+          <div style="font-family: 'Space Grotesk'; font-size: 2rem; font-weight: 700; color: #42c584;">2+</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">Years Experience</div>
+        </div>
+        <div>
+          <div style="font-family: 'Space Grotesk'; font-size: 2rem; font-weight: 700; color: #42c584;">5%</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">Revenue Increase</div>
+        </div>
+        <div>
+          <div style="font-family: 'Space Grotesk'; font-size: 2rem; font-weight: 700; color: #42c584;">80%</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">AI Productivity Boost</div>
+        </div>
+        <div>
+          <div style="font-family: 'Space Grotesk'; font-size: 2rem; font-weight: 700; color: #42c584;">850</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">TOEIC Score</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT / EDUCATION ==================== -->
+  <section id="about" style="padding: 100px 24px; position: relative; z-index: 1;">
+    <div style="max-width: 1120px; margin: 0 auto;" class="reveal">
+      <div class="section-accent"></div>
+      <h2 style="font-size: 2rem; font-weight: 700; color: var(--text-heading); margin-bottom: 12px;">About & Education</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 48px; max-width: 600px;">Background, education and academic highlights.</p>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+        <!-- About card -->
+        <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 16px; padding: 32px;" class="card-hover">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(26,171,104,0.1); display: flex; align-items: center; justify-content: center;">
+              <svg width="22" height="22" fill="none" stroke="#42c584" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="7" r="4"/><path d="M5.5 21v-2a5.5 5.5 0 0 1 11 0v2"/></svg>
+            </div>
+            <h3 style="font-size: 1.15rem; font-weight: 600; color: var(--text-heading);">Who I Am</h3>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">
+  I'm a <strong style="color: var(--strong-color);">Mid-level Data Analyst</strong> 
+  with a strong technical foundation and hands-on experience working with large-scale user behavior data. 
+  I specialize in turning complex datasets into clear insights and meaningful, story-driven dashboards.
+  <br><br>
+
+  I’m comfortable owning end-to-end 
+  <strong style="color: var(--strong-color);"> ETL workflows </strong>, 
+  and building machine learning models that support product optimization, including churn, CLV, and purchase prediction. 
+  Above all, I’m driven by creating real business impact. I thrive on deep research, continuous learning, 
+  and delivering solutions that truly move the needle. I turn raw data into real business outcomes — 
+  including a measurable <strong style="color: #42c584;">5% revenue increase</strong> 
+  through data-driven strategies.
+</p>
+          <div style="margin-top: 20px; display: flex; gap: 8px; flex-wrap: wrap;">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">Machine Learning</span>
+          </div>
+        </div>
+
+        <!-- Education card -->
+        <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 16px; padding: 32px;" class="card-hover">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(26,171,104,0.1); display: flex; align-items: center; justify-content: center;">
+              <svg width="22" height="22" fill="none" stroke="#42c584" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 2 2 10l10 5 10-5z"/><path d="M6 12v5c0 0 2.5 3 6 3s6-3 6-3v-5"/></svg>
+            </div>
+            <h3 style="font-size: 1.15rem; font-weight: 600; color: var(--text-heading);">Education</h3>
+          </div>
+          <div>
+            <h4 style="color: var(--text-heading); font-size: 1rem; font-weight: 600;">Information Systems</h4>
+            <p style="color: #42c584; font-size: 0.85rem; font-weight: 500; margin-bottom: 4px;">Hanoi University of Science and Technology (HUST)</p>
+            <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 16px;">2021 &ndash; 2025 &nbsp;&bull;&nbsp; GPA: 3.0 / 4.0</p>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; font-weight: 500; margin-bottom: 8px;">Top Coursework (4.0/4.0):</p>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px;">
+              <li style="color: var(--text-secondary); font-size: 0.85rem; display: flex; align-items: center; gap: 8px;">
+                <span style="width: 6px; height: 6px; border-radius: 50%; background: #1aab68; flex-shrink: 0;"></span>
+                Probability & Statistics + Statistical Inference
+              </li>
+              <li style="color: var(--text-secondary); font-size: 0.85rem; display: flex; align-items: center; gap: 8px;">
+                <span style="width: 6px; height: 6px; border-radius: 50%; background: #1aab68; flex-shrink: 0;"></span>
+                Database Systems
+              </li>
+              <li style="color: var(--text-secondary); font-size: 0.85rem; display: flex; align-items: center; gap: 8px;">
+                <span style="width: 6px; height: 6px; border-radius: 50%; background: #1aab68; flex-shrink: 0;"></span>
+                Business Analysis + Data Analysis
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+      @media (max-width: 767px) {
+        #about div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+      }
+    </style>
+  </section>
+
+  <!-- ==================== AWARDS ==================== -->
+  <section id="awards" style="padding: 100px 24px; position: relative; z-index: 1;">
+    <div style="max-width: 1120px; margin: 0 auto;" class="reveal">
+      <div class="section-accent"></div>
+      <h2 style="font-size: 2rem; font-weight: 700; color: var(--text-heading); margin-bottom: 12px;">Awards</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 48px; max-width: 600px;">Academic competitions and recognitions.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        <!-- Award 1 -->
+        <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 16px; overflow: hidden;" class="card-hover">
+          <div class="award-img-area">
+            <img src="/portfolio/evidence/xplorator.png" alt="1st Place Xplorators" />
+            <div class="award-img-overlay"></div>
+          </div>
+          <div style="padding: 20px 24px 24px;">
+            <div style="color: #42c584; font-size: 1.5rem; margin-bottom: 10px;">&#127942;</div>
+            <h4 style="color: var(--text-heading); font-size: 1.05rem; font-weight: 600; margin-bottom: 6px;">1st Place &ndash; Xplorators</h4>
+            <p style="color: var(--text-muted); font-size: 0.85rem;">Fintech competition</p>
+          </div>
+        </div>
+
+        <!-- Award 2 -->
+        <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 16px; overflow: hidden;" class="card-hover">
+          <div class="award-img-area">
+            <img src="/portfolio/evidence/á quân.JPG" alt="2nd Place The EconoMaist" />
+            <div class="award-img-overlay"></div>
+          </div>
+          <div style="padding: 20px 24px 24px;">
+            <div style="color: #42c584; font-size: 1.5rem; margin-bottom: 10px;">&#127941;</div>
+            <h4 style="color: var(--text-heading); font-size: 1.05rem; font-weight: 600; margin-bottom: 6px;">2nd Place &ndash; The EconoMaist</h4>
+            <p style="color: var(--text-muted); font-size: 0.85rem;">AI + Economics competition (NEU)</p>
+          </div>
+        </div>
+
+        <!-- Award 3 -->
+        <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 16px; overflow: hidden;" class="card-hover">
+          <div class="award-img-area">
+            <img src="/portfolio/evidence/Giấy khen Bách KHoa.jpeg" alt="Certificate of Merit" />
+            <div class="award-img-overlay"></div>
+          </div>
+          <div style="padding: 20px 24px 24px;">
+            <div style="color: #42c584; font-size: 1.5rem; margin-bottom: 10px;">&#127775;</div>
+            <h4 style="color: var(--text-heading); font-size: 1.05rem; font-weight: 600; margin-bottom: 6px;">Certificate of Merit</h4>
+            <p style="color: var(--text-muted); font-size: 0.85rem;">Outstanding youth union achievements</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+      @media (max-width: 767px) {
+        #awards div[style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; }
+      }
+    </style>
+  </section>
+
+  <!-- ==================== EXPERIENCE ==================== -->
+  <section id="experience" style="padding: 100px 24px; position: relative; z-index: 1;">
+    <div style="max-width: 1120px; margin: 0 auto;" class="reveal">
+      <div class="section-accent"></div>
+      <h2 style="font-size: 2rem; font-weight: 700; color: var(--text-heading); margin-bottom: 12px;">Experience</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 48px; max-width: 600px;">My professional journey in data analytics.</p>
+
+      <div style="display: flex; flex-direction: column; gap: 40px; position: relative; padding-left: 36px;">
+        <!-- Timeline line -->
+        <div style="position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(to bottom, #1aab68 0%, rgba(26,171,104,0.2) 100%); border-radius: 1px;"></div>
+
+        <!-- Job 1: Current -->
+        <div class="timeline-item" style="position: relative;">
+          <div class="timeline-dot" style="position: absolute; left: -36px; top: 4px;"></div>
+          <div style="background: var(--bg-elevated); border: 1px solid rgba(26,171,104,0.12); border-radius: 16px; padding: 28px;" class="card-hover">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
+              <div>
+                <h3 style="color: var(--text-heading); font-size: 1.15rem; font-weight: 600;">Data Analyst</h3>
+                <p style="color: #42c584; font-size: 0.9rem; font-weight: 500;">FPT Games</p>
+              </div>
+              <span class="float-badge">Oct 2025 &ndash; Present</span>
+            </div>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px;">
+              <li style="color: var(--text-secondary); font-size: 0.875rem; display: flex; gap: 10px;">
+                <span style="color: #1aab68; flex-shrink: 0; margin-top: 2px;">&#9656;</span>
+                <span><strong style="color: var(--strong-color);">Tools:</strong> ClickHouse, Apache Spark, S3, SQL, Git, Power BI, Apache Superset for large-scale data processing and visualization.</span>
+              </li>
+              <li style="color: var(--text-secondary); font-size: 0.875rem; display: flex; gap: 10px;">
+                <span style="color: #1aab68; flex-shrink: 0; margin-top: 2px;">&#9656;</span>
+                <span><strong style="color: var(--strong-color);">AI-Augmented Productivity:</strong> Leveraged AI tools to boost productivity by 80% while maintaining high accuracy.</span>
+              </li>
+              <li style="color: var(--text-secondary); font-size: 0.875rem; display: flex; gap: 10px;">
+                <span style="color: #1aab68; flex-shrink: 0; margin-top: 2px;">&#9656;</span>
+                <span><strong style="color: var(--strong-color);">ETL & Data Pipelines:</strong> Built and automated ETL pipelines to deliver data across departments, optimizing cost and processing time at scale.</span>
+              </li>
+              <li style="color: var(--text-secondary); font-size: 0.875rem; display: flex; gap: 10px;">
+                <span style="color: #1aab68; flex-shrink: 0; margin-top: 2px;">&#9656;</span>
+                <span><strong style="color: var(--strong-color);">Network Behavior Analytics:</strong> Developed a domain-based customer network behavior analysis system with hourly data refresh.</span>
+              </li>
+              <li style="color: var(--text-secondary); font-size: 0.875rem; display: flex; gap: 10px;">
+                <span style="color: #1aab68; flex-shrink: 0; margin-top: 2px;">&#9656;</span>
+                <span><strong style="color: var(--strong-color);">Predictive Modeling:</strong> Built forecasting models to support data-driven business decisions.</span>
+              </li>
+              <li style="color: var(--text-secondary); font-size: 0.875rem; display: flex; gap: 10px;">
+                <span style="color: #1aab68; flex-shrink: 0; margin-top: 2px;">&#9656;</span>
+                <span><strong style="color: var(--strong-color);">Stakeholder Management:</strong> Translated leadership requirements into actionable data solutions.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="timeline-item" style="position: relative;">
+          <div class="timeline-dot" style="position: absolute; left: -36px; top: 4px;"></div>
+          <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 16px; padding: 28px;" class="card-hover">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
+              <div>
+                <h3 style="color: var(--text-heading); font-size: 1.15rem; font-weight: 600;">Data Analyst</h3>
+                <p style="color: #42c584; font-size: 0.9rem; font-weight: 500;">FPT Games</p>
+              </div>
+              <span style="color: var(--text-muted); font-size: 0.8rem; font-weight: 500; padding: 5px 12px; border-radius: 20px; background: rgba(100,116,139,0.1); border: 1px solid rgba(100,116,139,0.15);">Mar 2025 &ndash; Oct 2025</span>
+            </div>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px;">
+              <li style="color: var(--text-secondary); font-size: 0.875rem; display: flex; gap: 10px;">
+                <span style="color: #1aab68; flex-shrink: 0; margin-top: 2px;">&#9656;</span>
+                <span>Processed and analyzed large-scale datasets in Google BigQuery, designed and maintained daily ETL pipelines for interactive dashboards.</span>
+              </li>
+              <li style="color: var(--text-secondary); font-size: 0.875rem; display: flex; gap: 10px;">
+                <span style="color: #1aab68; flex-shrink: 0; margin-top: 2px;">&#9656;</span>
+                <span>Performed advanced user behavior analysis (event sequences, engagement patterns, retention trends) to uncover actionable insights.</span>
+              </li>
+              <li style="color: var(--text-secondary); font-size: 0.875rem; display: flex; gap: 10px;">
+                <span style="color: #1aab68; flex-shrink: 0; margin-top: 2px;">&#9656;</span>
+                <span>Built and deployed user segmentation models, combining rule-based logic and ML approaches for personalized targeting.</span>
+              </li>
+              <li style="color: var(--text-secondary); font-size: 0.875rem; display: flex; gap: 10px;">
+                <span style="color: #1aab68; flex-shrink: 0; margin-top: 2px;">&#9656;</span>
+                <span>Developed predictive models &mdash; purchase prediction, churn prediction, and LTV forecasting.</span>
+              </li>
+              <li style="color: var(--text-secondary); font-size: 0.875rem; display: flex; gap: 10px;">
+                <span style="color: #1aab68; flex-shrink: 0; margin-top: 2px;">&#9656;</span>
+                <span>Evaluated impact through A/B testing, ensuring measurable business improvements.</span>
+              </li>
+            </ul>
+            <div style="margin-top: 16px; padding: 12px 16px; background: rgba(26,171,104,0.06); border-radius: 10px; border-left: 3px solid #1aab68;">
+              <p style="color: #42c584; font-size: 0.85rem; font-weight: 600;">Result: Achieved a 5% increase in product revenue, contributing significantly to overall profitability.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="timeline-item" style="position: relative;">
+          <div class="timeline-dot" style="position: absolute; left: -36px; top: 4px;"></div>
+          <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 16px; padding: 28px;" class="card-hover">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
+              <div>
+                <h3 style="color: var(--text-heading); font-size: 1.15rem; font-weight: 600;">Data Analyst</h3>
+                <p style="color: #42c584; font-size: 0.9rem; font-weight: 500;">Socotec</p>
+              </div>
+              <span style="color: var(--text-muted); font-size: 0.8rem; font-weight: 500; padding: 5px 12px; border-radius: 20px; background: rgba(100,116,139,0.1); border: 1px solid rgba(100,116,139,0.15);">Jun 2024 &ndash; Mar 2025</span>
+            </div>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px;">
+              <li style="color: var(--text-secondary); font-size: 0.875rem; display: flex; gap: 10px;">
+                <span style="color: #1aab68; flex-shrink: 0; margin-top: 2px;">&#9656;</span>
+                <span>Analyzed requirements from leadership using problem-solving frameworks (5 Whys, 5W1H) to understand context and root causes.</span>
+              </li>
+              <li style="color: var(--text-secondary); font-size: 0.875rem; display: flex; gap: 10px;">
+                <span style="color: #1aab68; flex-shrink: 0; margin-top: 2px;">&#9656;</span>
+                <span>Collaborated with cross-functional teams to understand business processes and translate knowledge into effective solutions.</span>
+              </li>
+              <li style="color: var(--text-secondary); font-size: 0.875rem; display: flex; gap: 10px;">
+                <span style="color: #1aab68; flex-shrink: 0; margin-top: 2px;">&#9656;</span>
+                <span>Built clear, insightful dashboards that directly answer key business questions with precision and clarity.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SKILLS ==================== -->
+  <section id="skills" style="padding: 100px 24px; position: relative; z-index: 1;">
+    <div style="max-width: 1120px; margin: 0 auto;" class="reveal">
+      <div class="section-accent"></div>
+      <h2 style="font-size: 2rem; font-weight: 700; color: var(--text-heading); margin-bottom: 12px;">Skills & Tools</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 48px; max-width: 600px;">Technologies and tools I work with daily.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+        <!-- BI & Visualization -->
+        <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 16px; padding: 28px;" class="card-hover">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+            <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(26,171,104,0.1); display: flex; align-items: center; justify-content: center;">
+              <svg width="20" height="20" fill="none" stroke="#42c584" stroke-width="2"><rect x="2" y="10" width="4" height="10" rx="1"/><rect x="8" y="6" width="4" height="14" rx="1"/><rect x="14" y="2" width="4" height="18" rx="1"/></svg>
+            </div>
+            <h3 style="color: var(--text-heading); font-size: 1rem; font-weight: 600;">BI & Visualization</h3>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">DAX</span>
+            <span class="skill-tag">Looker Studio</span>
+            <span class="skill-tag">Apache Superset</span>
+            <span class="skill-tag">Data Modeling</span>
+            <span class="skill-tag">Story Telling</span>
+          </div>
+        </div>
+
+        <!-- Data Engineering -->
+        <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 16px; padding: 28px;" class="card-hover">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+            <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(26,171,104,0.1); display: flex; align-items: center; justify-content: center;">
+              <svg width="20" height="20" fill="none" stroke="#42c584" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3 style="color: var(--text-heading); font-size: 1rem; font-weight: 600;">Data Engineering</h3>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span class="skill-tag">Google BigQuery</span>
+            <span class="skill-tag">ClickHouse</span>
+            <span class="skill-tag">Apache Spark</span>
+            <span class="skill-tag">Hadoop</span>
+            <span class="skill-tag">S3</span>
+            <span class="skill-tag">Firebase</span>
+            <span class="skill-tag">ETL Pipelines</span>
+          </div>
+        </div>
+
+        <!-- Programming -->
+        <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 16px; padding: 28px;" class="card-hover">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+            <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(26,171,104,0.1); display: flex; align-items: center; justify-content: center;">
+              <svg width="20" height="20" fill="none" stroke="#42c584" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3 style="color: var(--text-heading); font-size: 1rem; font-weight: 600;">Programming</h3>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">Seaborn</span>
+            <span class="skill-tag">Scikit-Learn</span>
+            <span class="skill-tag">SpaCy</span>
+          </div>
+        </div>
+
+        <!-- ML & AI -->
+        <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 16px; padding: 28px;" class="card-hover">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+            <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(26,171,104,0.1); display: flex; align-items: center; justify-content: center;">
+              <svg width="20" height="20" fill="none" stroke="#42c584" stroke-width="2"><circle cx="10" cy="10" r="3"/><path d="M10 2v5M10 13v5M2 10h5M13 10h5M4.2 4.2l3.6 3.6M12.2 12.2l3.6 3.6M4.2 15.8l3.6-3.6M12.2 7.8l3.6-3.6"/></svg>
+            </div>
+            <h3 style="color: var(--text-heading); font-size: 1rem; font-weight: 600;">ML & AI</h3>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">Deep Learning</span>
+            <span class="skill-tag">XGBoost</span>
+            <span class="skill-tag">LSTM</span>
+            <span class="skill-tag">Prophet</span>
+            <span class="skill-tag">AI Productivity</span>
+          </div>
+        </div>
+
+        <!-- SQL Expertise -->
+        <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 16px; padding: 28px;" class="card-hover">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+            <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(26,171,104,0.1); display: flex; align-items: center; justify-content: center;">
+              <svg width="20" height="20" fill="none" stroke="#42c584" stroke-width="2"><ellipse cx="10" cy="5" rx="8" ry="3"/><path d="M2 5v10c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M2 10c0 1.66 3.58 3 8 3s8-1.34 8-3"/></svg>
+            </div>
+            <h3 style="color: var(--text-heading); font-size: 1rem; font-weight: 600;">SQL Expertise</h3>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span class="skill-tag">Window Functions</span>
+            <span class="skill-tag">CTE</span>
+            <span class="skill-tag">Query Optimization</span>
+            <span class="skill-tag">Stored Procedures</span>
+            <span class="skill-tag">Data Crawling</span>
+          </div>
+        </div>
+
+        <!-- Communication -->
+        <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 16px; padding: 28px;" class="card-hover">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+            <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(26,171,104,0.1); display: flex; align-items: center; justify-content: center;">
+              <svg width="20" height="20" fill="none" stroke="#42c584" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3 style="color: var(--text-heading); font-size: 1rem; font-weight: 600;">Soft Skills</h3>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span class="skill-tag">English (TOEIC 850)</span>
+            <span class="skill-tag">Stakeholder Mgmt</span>
+            <span class="skill-tag">Problem Solving</span>
+            <span class="skill-tag">Cross-team Collaboration</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROJECTS ==================== -->
+  <section id="projects" style="padding: 100px 24px; position: relative; z-index: 1;">
+    <div style="max-width: 1120px; margin: 0 auto;" class="reveal">
+      <div class="section-accent"></div>
+      <h2 style="font-size: 2rem; font-weight: 700; color: var(--text-heading); margin-bottom: 12px;">Projects</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 48px; max-width: 600px;">Featured projects showcasing end-to-end data solutions.</p>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px;">
+        <!-- Project 1 -->
+        <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 16px; overflow: hidden;" class="card-hover">
+          <div class="project-img-area">
+            <img src="portfolio/evidence/prj_stock.png" alt="Stock Forecasting" />
+            <div class="project-img-overlay"></div>
+            <div style="position: absolute; top: 16px; left: 16px; display: flex; gap: 6px;">
+              <span style="padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; font-weight: 600; background: rgba(26,171,104,0.2); color: #79dcaa; border: 1px solid rgba(26,171,104,0.2);">Python</span>
+              <span style="padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; font-weight: 600; background: rgba(26,171,104,0.2); color: #79dcaa; border: 1px solid rgba(26,171,104,0.2);">LSTM</span>
+              <span style="padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; font-weight: 600; background: rgba(26,171,104,0.2); color: #79dcaa; border: 1px solid rgba(26,171,104,0.2);">Power BI</span>
+              <span style="padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; font-weight: 600; background: rgba(26,171,104,0.2); color: #79dcaa; border: 1px solid rgba(26,171,104,0.2);">MySQL</span>
+            </div>
+          </div>
+          <div style="padding: 24px;">
+            <h3 style="color: var(--text-heading); font-size: 1.15rem; font-weight: 600; margin-bottom: 10px;">Financial Reporting System with Stock Price Forecasting</h3>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 20px;">
+              End-to-end data pipeline from API ingestion to MySQL database, with LSTM-based stock price prediction and Power BI dashboards deployed to web.
+            </p>
+            <button onclick="openModal('project1')" class="btn-outline" style="width: 100%; justify-content: center;">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="7"/><path d="M8 5v6M5 8h6"/></svg>
+              View Details
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 16px; overflow: hidden;" class="card-hover">
+          <div class="project-img-area" style="background: linear-gradient(135deg, #03281b, #0b6e44);">
+            <img src="portfolio/evidence/prj2.png" alt="Electricity Forecast" />
+            <div class="project-img-overlay"></div>
+            <div style="position: absolute; top: 16px; left: 16px; display: flex; gap: 6px; flex-wrap: wrap;">
+              <span style="padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; font-weight: 600; background: rgba(26,171,104,0.2); color: #79dcaa; border: 1px solid rgba(26,171,104,0.2);">XGBoost</span>
+              <span style="padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; font-weight: 600; background: rgba(26,171,104,0.2); color: #79dcaa; border: 1px solid rgba(26,171,104,0.2);">Prophet</span>
+              <span style="padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; font-weight: 600; background: rgba(26,171,104,0.2); color: #79dcaa; border: 1px solid rgba(26,171,104,0.2);">Kalman Filter</span>
+              <span style="padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; font-weight: 600; background: rgba(26,171,104,0.2); color: #79dcaa; border: 1px solid rgba(26,171,104,0.2);">Python</span>
+            </div>
+          </div>
+          <div style="padding: 24px;">
+            <h3 style="color: var(--text-heading); font-size: 1.15rem; font-weight: 600; margin-bottom: 10px;">Electricity Consumption Forecast</h3>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 20px;">
+              Multi-model forecasting system with 130 models across 13 provinces, processing TBs of data. Now in production.
+            </p>
+            <button onclick="openModal('project2')" class="btn-outline" style="width: 100%; justify-content: center;">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="7"/><path d="M8 5v6M5 8h6"/></svg>
+              View Details
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+      @media (max-width: 767px) {
+        #projects div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+      }
+    </style>
+  </section>
+
+  <!-- ==================== CERTIFICATES ==================== -->
+  <section id="certificates" style="padding: 100px 24px; position: relative; z-index: 1;">
+    <div style="max-width: 1120px; margin: 0 auto;" class="reveal">
+      <div class="section-accent"></div>
+      <h2 style="font-size: 2rem; font-weight: 700; color: var(--text-heading); margin-bottom: 12px;">Certificates</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 48px; max-width: 600px;">Professional certifications validating my technical skills.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <!-- Cert 1 -->
+        <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 14px; padding: 24px; display: flex; flex-direction: column;" class="card-hover">
+          <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(26,171,104,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+            <svg width="22" height="22" fill="none" stroke="#42c584" stroke-width="2"><ellipse cx="11" cy="5" rx="8" ry="3"/><path d="M3 5v10c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/></svg>
+          </div>
+          <h4 style="color: var(--text-heading); font-size: 0.95rem; font-weight: 600; margin-bottom: 4px;">SQL Advanced</h4>
+          <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 16px;">by HackerRank</p>
+          <button onclick="openModal('cert1')" class="btn-outline" style="margin-top: auto; justify-content: center; width: 100%; padding: 8px 16px; font-size: 0.8rem;">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1h12v12H1z"/><path d="M4 7h6M7 4v6"/></svg>
+            View Certificate
+          </button>
+        </div>
+
+        <!-- Cert 2 -->
+        <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 14px; padding: 24px; display: flex; flex-direction: column;" class="card-hover">
+          <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(26,171,104,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+            <svg width="22" height="22" fill="none" stroke="#42c584" stroke-width="2"><rect x="2" y="10" width="4" height="10" rx="1"/><rect x="8" y="6" width="4" height="14" rx="1"/><rect x="14" y="2" width="4" height="18" rx="1"/></svg>
+          </div>
+          <h4 style="color: var(--text-heading); font-size: 0.95rem; font-weight: 600; margin-bottom: 4px;">Power BI and SQL</h4>
+          <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 16px;">by MCI</p>
+          <button onclick="openModal('cert2')" class="btn-outline" style="margin-top: auto; justify-content: center; width: 100%; padding: 8px 16px; font-size: 0.8rem;">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1h12v12H1z"/><path d="M4 7h6M7 4v6"/></svg>
+            View Certificate
+          </button>
+        </div>
+
+        <!-- Cert 3 -->
+        <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 14px; padding: 24px; display: flex; flex-direction: column;" class="card-hover">
+          <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(26,171,104,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+            <svg width="22" height="22" fill="none" stroke="#42c584" stroke-width="2"><rect x="2" y="3" width="18" height="16" rx="2"/><path d="M8 7h8M8 11h5"/></svg>
+          </div>
+          <h4 style="color: var(--text-heading); font-size: 0.95rem; font-weight: 600; margin-bottom: 4px;">MOS Excel Specialist</h4>
+          <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 16px;">Microsoft Office Specialist</p>
+          <button onclick="openModal('cert3')" class="btn-outline" style="margin-top: auto; justify-content: center; width: 100%; padding: 8px 16px; font-size: 0.8rem;">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1h12v12H1z"/><path d="M4 7h6M7 4v6"/></svg>
+            View Certificate
+          </button>
+        </div>
+
+        <!-- Cert 4 -->
+        <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 14px; padding: 24px; display: flex; flex-direction: column;" class="card-hover">
+          <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(26,171,104,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+            <svg width="22" height="22" fill="none" stroke="#42c584" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20"/></svg>
+          </div>
+          <h4 style="color: var(--text-heading); font-size: 0.95rem; font-weight: 600; margin-bottom: 4px;">Python for Data Analyst</h4>
+          <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 16px;">by MCI</p>
+          <button onclick="openModal('cert4')" class="btn-outline" style="margin-top: auto; justify-content: center; width: 100%; padding: 8px 16px; font-size: 0.8rem;">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1h12v12H1z"/><path d="M4 7h6M7 4v6"/></svg>
+            View Certificate
+          </button>
+        </div>
+
+        <!-- Cert 5 -->
+        <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 14px; padding: 24px; display: flex; flex-direction: column;" class="card-hover">
+          <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(26,171,104,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+            <svg width="22" height="22" fill="none" stroke="#42c584" stroke-width="2"><circle cx="11" cy="11" r="9"/><path d="M11 7v4l3 3"/></svg>
+          </div>
+          <h4 style="color: var(--text-heading); font-size: 0.95rem; font-weight: 600; margin-bottom: 4px;">Google Data Analytics</h4>
+          <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 16px;">by Google</p>
+          <button onclick="openModal('cert5')" class="btn-outline" style="margin-top: auto; justify-content: center; width: 100%; padding: 8px 16px; font-size: 0.8rem;">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1h12v12H1z"/><path d="M4 7h6M7 4v6"/></svg>
+            View Certificate
+          </button>
+        </div>
+
+        <!-- Cert 6 -->
+        <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 14px; padding: 24px; display: flex; flex-direction: column;" class="card-hover">
+          <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(26,171,104,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+            <svg width="22" height="22" fill="none" stroke="#42c584" stroke-width="2"><circle cx="11" cy="11" r="9"/><path d="M7 11l3 3 5-5"/></svg>
+          </div>
+          <h4 style="color: var(--text-heading); font-size: 0.95rem; font-weight: 600; margin-bottom: 4px;">PL-300</h4>
+          <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 16px;">Microsoft Power BI Data Analyst</p>
+          <button onclick="openModal('cert6')" class="btn-outline" style="margin-top: auto; justify-content: center; width: 100%; padding: 8px 16px; font-size: 0.8rem;">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1h12v12H1z"/><path d="M4 7h6M7 4v6"/></svg>
+            View Certificate
+          </button>
+        </div>
+      </div>
+    </div>
+    <style>
+      @media (max-width: 767px) {
+        #certificates div[style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; }
+      }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        #certificates div[style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr 1fr !important; }
+      }
+    </style>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section id="contact" style="padding: 100px 24px 80px; position: relative; z-index: 1;">
+    <div style="max-width: 700px; margin: 0 auto; text-align: center;" class="reveal">
+      <div class="section-accent" style="margin: 0 auto 16px;"></div>
+      <h2 style="font-size: 2rem; font-weight: 700; color: var(--text-heading); margin-bottom: 12px;">Get in Touch</h2>
+      <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 40px;">
+        I'm always open to new opportunities and collaborations. Feel free to reach out!
+      </p>
+      <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+        <a href="mailto:dungvutien48@gmail.com" class="btn-primary" style="padding: 14px 28px; font-size: 1rem;">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          dungvutien48@gmail.com
+        </a>
+        <a href="tel:0582003168" class="btn-outline" style="padding: 14px 28px; font-size: 1rem;">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          058-200-3168
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="border-top: 1px solid var(--border); padding: 28px 24px; text-align: center; position: relative; z-index: 1;">
+    <p style="color: var(--text-muted); font-size: 0.8rem;">&copy; 2025 V&#361; Ti&#7871;n D&#361;ng. All rights reserved.</p>
+  </footer>
+
+  <!-- ==================== MODALS ==================== -->
+
+  <!-- Project 1 Modal -->
+  <div class="modal-overlay" id="modal-project1" onclick="if(event.target===this)closeModal()">
+    <div class="modal-content" style="position: relative;">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+      <span style="display: inline-block; padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; background: rgba(26,171,104,0.15); color: #42c584; margin-bottom: 16px;">PROJECT</span>
+      <h3 style="font-size: 1.4rem; font-weight: 700; color: var(--text-heading); margin-bottom: 8px;">Financial Reporting System with Stock Price Forecasting</h3>
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 24px;">Python &bull; LSTM &bull; MySQL &bull; Power BI &bull; Word Embeddings</p>
+
+      <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px;">
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <span style="color: #1aab68; margin-top: 3px; flex-shrink: 0;">&#9656;</span>
+          <p style="color: var(--modal-text); font-size: 0.9rem;">Developed a data pipeline in Python to collect data from APIs, including price_stock, company_info, financial, income, and cashflow datasets.</p>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <span style="color: #1aab68; margin-top: 3px; flex-shrink: 0;">&#9656;</span>
+          <p style="color: var(--modal-text); font-size: 0.9rem;">Built a real-time data integration system that loads data into a MySQL database, designed and optimized the data model, data mart, and OLAP structure for analytics and reporting.</p>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <span style="color: #1aab68; margin-top: 3px; flex-shrink: 0;">&#9656;</span>
+          <p style="color: var(--modal-text); font-size: 0.9rem;">Implemented a predictive model using LSTM combined with word embeddings, leveraging historical stock data and financial news to forecast future stock prices.</p>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <span style="color: #1aab68; margin-top: 3px; flex-shrink: 0;">&#9656;</span>
+          <p style="color: var(--modal-text); font-size: 0.9rem;">Created interactive Power BI dashboards to visualize stock performance, financial metrics, and prediction results.</p>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <span style="color: #1aab68; margin-top: 3px; flex-shrink: 0;">&#9656;</span>
+          <p style="color: var(--modal-text); font-size: 0.9rem;">Deployed the entire system to a website, enabling end users to access real-time reports and model predictions.</p>
+        </div>
+      </div>
+
+      <div style="padding: 16px; background: rgba(26,171,104,0.06); border-radius: 10px; border: 1px solid rgba(26,171,104,0.1);">
+        <p style="color: var(--text-secondary); font-size: 0.8rem; margin-bottom: 8px;">Want to see this project in action? Upload your evidence images/links below:</p>
+        <p style="color: var(--text-muted); font-size: 0.75rem; font-style: italic;">Add your project screenshots, demo links, or GitHub repository URL to the <code style="background: var(--code-bg); padding: 2px 6px; border-radius: 4px; color: #1aab68;">portfolio/evidence/</code> folder and they will appear here.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 2 Modal -->
+  <div class="modal-overlay" id="modal-project2" onclick="if(event.target===this)closeModal()">
+    <div class="modal-content" style="position: relative;">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+      <span style="display: inline-block; padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; background: rgba(26,171,104,0.15); color: #42c584; margin-bottom: 16px;">PROJECT &bull; IN PRODUCTION</span>
+      <h3 style="font-size: 1.4rem; font-weight: 700; color: var(--text-heading); margin-bottom: 8px;">Electricity Consumption Forecast</h3>
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 24px;">XGBoost (Quantile & Tweedie) &bull; Facebook Prophet &bull; Kalman Filter &bull; Python</p>
+
+      <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px;">
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <span style="color: #1aab68; margin-top: 3px; flex-shrink: 0;">&#9656;</span>
+          <p style="color: var(--modal-text); font-size: 0.9rem;">Forecast commercial electricity consumption at MDD (meter point) level &mdash; the most granular level &mdash; across 13 provinces, processing several TBs of raw data.</p>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <span style="color: #1aab68; margin-top: 3px; flex-shrink: 0;">&#9656;</span>
+          <p style="color: var(--modal-text); font-size: 0.9rem;">Designed a multi-model architecture with 130 models, segmenting MDDs by industry, consumption size, volatility, and clustering to handle highly heterogeneous customer behavior.</p>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <span style="color: #1aab68; margin-top: 3px; flex-shrink: 0;">&#9656;</span>
+          <p style="color: var(--modal-text); font-size: 0.9rem;">Applied deep feature engineering (lag, diff, pct_change, rolling statistics, group-level features) to capture consumption patterns beyond raw time-series values.</p>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <span style="color: #1aab68; margin-top: 3px; flex-shrink: 0;">&#9656;</span>
+          <p style="color: var(--modal-text); font-size: 0.9rem;">Built an auto dynamic train selection mechanism using Weighted Euclidean distance to identify historically similar periods, avoiding contamination from anomalous data.</p>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <span style="color: #1aab68; margin-top: 3px; flex-shrink: 0;">&#9656;</span>
+          <p style="color: var(--modal-text); font-size: 0.9rem;">Integrated Kalman Smoothing for anomaly detection and correction, and anomaly scoring + ranking to handle forecast outliers without naive averaging.</p>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <span style="color: #1aab68; margin-top: 3px; flex-shrink: 0;">&#9656;</span>
+          <p style="color: var(--modal-text); font-size: 0.9rem;">Applied Facebook Prophet for province-level forecasting as a hierarchical constraint, with regional weight adjustments to account for geographic differences.</p>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <span style="color: #1aab68; margin-top: 3px; flex-shrink: 0;">&#9656;</span>
+          <p style="color: var(--modal-text); font-size: 0.9rem;">Delivered uncertainty quantification via Prophet 80&ndash;100% confidence intervals.</p>
+        </div>
+      </div>
+
+      <div style="padding: 14px 16px; background: rgba(26,171,104,0.08); border-radius: 10px; border-left: 3px solid #1aab68; margin-bottom: 20px;">
+        <p style="color: #42c584; font-size: 0.9rem; font-weight: 600;">The model has been put into production.</p>
+      </div>
+
+      <div style="padding: 16px; background: rgba(26,171,104,0.06); border-radius: 10px; border: 1px solid rgba(26,171,104,0.1);">
+        <p style="color: var(--text-secondary); font-size: 0.8rem; margin-bottom: 8px;">Want to see this project in action? Upload your evidence images/links below:</p>
+        <p style="color: var(--text-muted); font-size: 0.75rem; font-style: italic;">Add your project screenshots, demo links, or GitHub repository URL to the <code style="background: var(--code-bg); padding: 2px 6px; border-radius: 4px; color: #1aab68;">portfolio/evidence/</code> folder and they will appear here.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Certificate Modals -->
+  <div class="modal-overlay" id="modal-cert1" onclick="if(event.target===this)closeModal()">
+    <div class="modal-content" style="position: relative;">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+      <span style="display: inline-block; padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; background: rgba(26,171,104,0.15); color: #42c584; margin-bottom: 16px;">CERTIFICATE</span>
+      <h3 style="font-size: 1.4rem; font-weight: 700; color: var(--text-heading); margin-bottom: 8px;">SQL Advanced</h3>
+      <p style="color: #42c584; font-size: 0.9rem; font-weight: 500; margin-bottom: 20px;">Issued by HackerRank</p>
+      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 24px;">This certification validates advanced SQL skills including complex joins, subqueries, window functions, indexing, and query optimization techniques.</p>
+      <div style="border-radius: 12px; overflow: hidden;">
+        <img src="/portfolio/evidence/cert-sql-advanced.png" alt="SQL Advanced Certificate" style="width: 100%; display: block; border-radius: 12px;" />
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-cert2" onclick="if(event.target===this)closeModal()">
+    <div class="modal-content" style="position: relative;">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+      <span style="display: inline-block; padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; background: rgba(26,171,104,0.15); color: #42c584; margin-bottom: 16px;">CERTIFICATE</span>
+      <h3 style="font-size: 1.4rem; font-weight: 700; color: var(--text-heading); margin-bottom: 8px;">Power BI and SQL</h3>
+      <p style="color: #42c584; font-size: 0.9rem; font-weight: 500; margin-bottom: 20px;">Issued by MCI</p>
+      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 24px;">Certification covering Power BI dashboard development, data modeling, DAX formulas, and SQL querying for business intelligence.</p>
+      <div style="border-radius: 12px; overflow: hidden;">
+        <img src="/portfolio/evidence/cert-powerbi-sql.png" alt="Power BI and SQL Certificate" style="width: 100%; display: block; border-radius: 12px;" />
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-cert3" onclick="if(event.target===this)closeModal()">
+    <div class="modal-content" style="position: relative;">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+      <span style="display: inline-block; padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; background: rgba(26,171,104,0.15); color: #42c584; margin-bottom: 16px;">CERTIFICATE</span>
+      <h3 style="font-size: 1.4rem; font-weight: 700; color: var(--text-heading); margin-bottom: 8px;">MOS Excel Specialist</h3>
+      <p style="color: #42c584; font-size: 0.9rem; font-weight: 500; margin-bottom: 20px;">Microsoft Office Specialist</p>
+      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 24px;">Microsoft Office Specialist certification demonstrating proficiency in Excel spreadsheet management, formulas, data analysis, and visualization.</p>
+      <div style="border-radius: 12px; overflow: hidden;">
+        <img src="/portfolio/evidence/cert-mos-excel.png" alt="MOS Excel Specialist Certificate" style="width: 100%; display: block; border-radius: 12px;" />
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-cert4" onclick="if(event.target===this)closeModal()">
+    <div class="modal-content" style="position: relative;">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+      <span style="display: inline-block; padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; background: rgba(26,171,104,0.15); color: #42c584; margin-bottom: 16px;">CERTIFICATE</span>
+      <h3 style="font-size: 1.4rem; font-weight: 700; color: var(--text-heading); margin-bottom: 8px;">Python for Data Analyst</h3>
+      <p style="color: #42c584; font-size: 0.9rem; font-weight: 500; margin-bottom: 20px;">Issued by MCI</p>
+      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 24px;">Certification in Python programming for data analysis, covering Pandas, NumPy, data wrangling, visualization, and statistical analysis.</p>
+      <div style="border-radius: 12px; overflow: hidden;">
+        <img src="/portfolio/evidence/cert-python-data.png" alt="Python for Data Analyst Certificate" style="width: 100%; display: block; border-radius: 12px;" />
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-cert5" onclick="if(event.target===this)closeModal()">
+    <div class="modal-content" style="position: relative;">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+      <span style="display: inline-block; padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; background: rgba(26,171,104,0.15); color: #42c584; margin-bottom: 16px;">CERTIFICATE</span>
+      <h3 style="font-size: 1.4rem; font-weight: 700; color: var(--text-heading); margin-bottom: 8px;">Google Data Analytics</h3>
+      <p style="color: #42c584; font-size: 0.9rem; font-weight: 500; margin-bottom: 20px;">Issued by Google</p>
+      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 24px;">Google's professional certification covering data analysis processes, data cleaning, visualization, R programming, and analytics best practices.</p>
+      <div style="border-radius: 12px; overflow: hidden;">
+        <img src="/portfolio/evidence/cert-google-data.png" alt="Google Data Analytics Certificate" style="width: 100%; display: block; border-radius: 12px;" />
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-cert6" onclick="if(event.target===this)closeModal()">
+    <div class="modal-content" style="position: relative;">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+      <span style="display: inline-block; padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; background: rgba(26,171,104,0.15); color: #42c584; margin-bottom: 16px;">CERTIFICATE</span>
+      <h3 style="font-size: 1.4rem; font-weight: 700; color: var(--text-heading); margin-bottom: 8px;">PL-300</h3>
+      <p style="color: #42c584; font-size: 0.9rem; font-weight: 500; margin-bottom: 20px;">Microsoft Power BI Data Analyst</p>
+      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 24px;">Microsoft certification validating expertise in Power BI data modeling, visualization, DAX, and delivering actionable analytics solutions.</p>
+      <div style="border-radius: 12px; overflow: hidden;">
+        <img src="/portfolio/evidence/cert-pl-300.png" alt="PL-300 Certificate" style="width: 100%; display: block; border-radius: 12px;" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script>
+    // Theme toggle
+    function toggleTheme() {
+      var current = document.documentElement.getAttribute('data-theme') || 'dark';
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+
+    // Spotlight cursor glow
+    (function() {
+      var glow = document.getElementById('spotlight-glow');
+      if (!glow) return;
+      var moveTimer = null;
+
+      window.addEventListener('mousemove', function(e) {
+        glow.style.left = e.clientX + 'px';
+        glow.style.top = e.clientY + 'px';
+        glow.classList.add('moving');
+
+        if (moveTimer) clearTimeout(moveTimer);
+        moveTimer = setTimeout(function() {
+          glow.classList.remove('moving');
+        }, 150);
+      });
+    })();
+
+    // Flow field particle background (dark mode)
+    var flowField = (function() {
+      var canvas = document.getElementById('flowfield-canvas');
+      var container = document.getElementById('flowfield-container');
+      if (!canvas || !container) return { start: function(){}, stop: function(){} };
+
+      var ctx = canvas.getContext('2d');
+      var width, height, particles = [], animId = null;
+      var mouse = { x: -1000, y: -1000 };
+      var PARTICLE_COUNT = 600;
+      var SPEED = 0.8;
+      var TRAIL_OPACITY = 0.1;
+      var COLOR = '#818cf8'; // indigo-400
+
+      function Particle() {
+        this.reset();
+        this.age = Math.random() * this.life; // stagger initial ages
+      }
+      Particle.prototype.reset = function() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = 0;
+        this.vy = 0;
+        this.age = 0;
+        this.life = Math.random() * 200 + 100;
+      };
+      Particle.prototype.update = function() {
+        var angle = (Math.cos(this.x * 0.005) + Math.sin(this.y * 0.005)) * Math.PI;
+        this.vx += Math.cos(angle) * 0.2 * SPEED;
+        this.vy += Math.sin(angle) * 0.2 * SPEED;
+
+        var dx = mouse.x - this.x, dy = mouse.y - this.y;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 150) {
+          var force = (150 - dist) / 150;
+          this.vx -= dx * force * 0.05;
+          this.vy -= dy * force * 0.05;
+        }
+
+        this.x += this.vx;
+        this.y += this.vy;
+        this.vx *= 0.95;
+        this.vy *= 0.95;
+        this.age++;
+        if (this.age > this.life) this.reset();
+        if (this.x < 0) this.x = width;
+        if (this.x > width) this.x = 0;
+        if (this.y < 0) this.y = height;
+        if (this.y > height) this.y = 0;
+      };
+      Particle.prototype.draw = function(c) {
+        var alpha = 1 - Math.abs((this.age / this.life) - 0.5) * 2;
+        c.globalAlpha = alpha;
+        c.fillStyle = COLOR;
+        c.fillRect(this.x, this.y, 1.5, 1.5);
+      };
+
+      function init() {
+        width = container.clientWidth;
+        height = container.clientHeight;
+        var dpr = window.devicePixelRatio || 1;
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        ctx.scale(dpr, dpr);
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
+        particles = [];
+        for (var i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());
+      }
+
+      function animate() {
+        ctx.fillStyle = 'rgba(10, 15, 26, ' + TRAIL_OPACITY + ')';
+        ctx.fillRect(0, 0, width, height);
+        for (var i = 0; i < particles.length; i++) {
+          particles[i].update();
+          particles[i].draw(ctx);
+        }
+        ctx.globalAlpha = 1;
+        animId = requestAnimationFrame(animate);
+      }
+
+      function onResize() { init(); }
+      function onMouse(e) {
+        var rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+      }
+      function onLeave() { mouse.x = -1000; mouse.y = -1000; }
+
+      return {
+        start: function() {
+          if (animId) return;
+          init();
+          animate();
+          window.addEventListener('resize', onResize);
+          container.addEventListener('mousemove', onMouse);
+          container.addEventListener('mouseleave', onLeave);
+        },
+        stop: function() {
+          if (animId) { cancelAnimationFrame(animId); animId = null; }
+          window.removeEventListener('resize', onResize);
+          container.removeEventListener('mousemove', onMouse);
+          container.removeEventListener('mouseleave', onLeave);
+        }
+      };
+    })();
+
+    // Start flow field if dark mode on load
+    if (document.documentElement.getAttribute('data-theme') === 'dark') {
+      flowField.start();
+    }
+
+    // Patch theme toggle to manage flow field
+    var _origToggle = toggleTheme;
+    toggleTheme = function() {
+      _origToggle();
+      var theme = document.documentElement.getAttribute('data-theme');
+      if (theme === 'dark') flowField.start();
+      else flowField.stop();
+    };
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => revealObserver.observe(el));
+
+    // Modal
+    let activeModal = null;
+    function openModal(id) {
+      const modal = document.getElementById('modal-' + id);
+      if (modal) {
+        modal.classList.add('active');
+        activeModal = modal;
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    function closeModal() {
+      if (activeModal) {
+        activeModal.classList.remove('active');
+        activeModal = null;
+        document.body.style.overflow = '';
+      }
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // Mobile menu
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+
+    // Smooth active nav highlight
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const top = section.offsetTop - 100;
+        if (window.scrollY >= top) current = section.getAttribute('id');
+      });
+      navLinks.forEach(link => {
+        link.style.color = link.getAttribute('href') === '#' + current ? 'var(--nav-active-color)' : '';
+      });
+    });
+  </script>
+</body>
+</html>
