@@ -967,6 +967,54 @@
             </button>
           </div>
         </div>
+
+        <!-- Project 3 -->
+        <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 16px; overflow: hidden;" class="card-hover">
+          <div class="project-img-area" style="background: linear-gradient(135deg, #0a1a2e, #1a3a5c);">
+            <img src="portfolio/evidence/prj3.png" alt="Fraud Detection" />
+            <div class="project-img-overlay"></div>
+            <div style="position: absolute; top: 16px; left: 16px; display: flex; gap: 6px; flex-wrap: wrap;">
+              <span style="padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; font-weight: 600; background: rgba(26,171,104,0.2); color: #79dcaa; border: 1px solid rgba(26,171,104,0.2);">Python</span>
+              <span style="padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; font-weight: 600; background: rgba(26,171,104,0.2); color: #79dcaa; border: 1px solid rgba(26,171,104,0.2);">scikit-learn</span>
+              <span style="padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; font-weight: 600; background: rgba(26,171,104,0.2); color: #79dcaa; border: 1px solid rgba(26,171,104,0.2);">XGBoost</span>
+              <span style="padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; font-weight: 600; background: rgba(26,171,104,0.2); color: #79dcaa; border: 1px solid rgba(26,171,104,0.2);">FP-Growth</span>
+            </div>
+          </div>
+          <div style="padding: 24px;">
+            <h3 style="color: var(--text-heading); font-size: 1.15rem; font-weight: 600; margin-bottom: 10px;">Fraud Pattern Mining in E-Commerce Transactions</h3>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 20px;">
+              Association Rule Mining + hybrid ML model on 1.85M credit card transactions to detect fraud patterns in a heavily imbalanced dataset (fraud rate: 0.52%).
+            </p>
+            <button onclick="openModal('project3')" class="btn-outline" style="width: 100%; justify-content: center;">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="7"/><path d="M8 5v6M5 8h6"/></svg>
+              View Details
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 16px; overflow: hidden;" class="card-hover">
+          <div class="project-img-area" style="background: linear-gradient(135deg, #1a0a2e, #3a1a5c);">
+            <img src="portfolio/evidence/prj4.png" alt="Personal Finance Management" />
+            <div class="project-img-overlay"></div>
+            <div style="position: absolute; top: 16px; left: 16px; display: flex; gap: 6px; flex-wrap: wrap;">
+              <span style="padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; font-weight: 600; background: rgba(26,171,104,0.2); color: #79dcaa; border: 1px solid rgba(26,171,104,0.2);">FastAPI</span>
+              <span style="padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; font-weight: 600; background: rgba(26,171,104,0.2); color: #79dcaa; border: 1px solid rgba(26,171,104,0.2);">React</span>
+              <span style="padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; font-weight: 600; background: rgba(26,171,104,0.2); color: #79dcaa; border: 1px solid rgba(26,171,104,0.2);">PostgreSQL</span>
+              <span style="padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; font-weight: 600; background: rgba(26,171,104,0.2); color: #79dcaa; border: 1px solid rgba(26,171,104,0.2);">Telegram Bot</span>
+            </div>
+          </div>
+          <div style="padding: 24px;">
+            <h3 style="color: var(--text-heading); font-size: 1.15rem; font-weight: 600; margin-bottom: 10px;">Personal Finance Management System</h3>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 20px;">
+              Full-stack finance tracker with a Telegram bot as the primary input interface, a FastAPI backend, Supabase/PostgreSQL storage, and a React dashboard for spending visualization.
+            </p>
+            <button onclick="openModal('project4')" class="btn-outline" style="width: 100%; justify-content: center;">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="7"/><path d="M8 5v6M5 8h6"/></svg>
+              View Details
+            </button>
+          </div>
+        </div>
       </div>
     </div>
     <style>
@@ -1132,10 +1180,10 @@
         </div>
       </div>
 
-      <div style="padding: 16px; background: rgba(26,171,104,0.06); border-radius: 10px; border: 1px solid rgba(26,171,104,0.1);">
-        <p style="color: var(--text-secondary); font-size: 0.8rem; margin-bottom: 8px;">Want to see this project in action? Upload your evidence images/links below:</p>
-        <p style="color: var(--text-muted); font-size: 0.75rem; font-style: italic;">Add your project screenshots, demo links, or GitHub repository URL to the <code style="background: var(--code-bg); padding: 2px 6px; border-radius: 4px; color: #1aab68;">portfolio/evidence/</code> folder and they will appear here.</p>
-      </div>
+      <a href="https://github.com/hgqhh/Stock" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: rgba(26,171,104,0.12); border: 1px solid rgba(26,171,104,0.3); border-radius: 8px; color: #42c584; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: background 0.2s, border-color 0.2s;" onmouseover="this.style.background='rgba(26,171,104,0.22)';this.style.borderColor='rgba(26,171,104,0.6)'" onmouseout="this.style.background='rgba(26,171,104,0.12)';this.style.borderColor='rgba(26,171,104,0.3)'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        Click for more details
+      </a>
     </div>
   </div>
 
@@ -1182,10 +1230,94 @@
         <p style="color: #42c584; font-size: 0.9rem; font-weight: 600;">The model has been put into production.</p>
       </div>
 
-      <div style="padding: 16px; background: rgba(26,171,104,0.06); border-radius: 10px; border: 1px solid rgba(26,171,104,0.1);">
-        <p style="color: var(--text-secondary); font-size: 0.8rem; margin-bottom: 8px;">Want to see this project in action? Upload your evidence images/links below:</p>
-        <p style="color: var(--text-muted); font-size: 0.75rem; font-style: italic;">Add your project screenshots, demo links, or GitHub repository URL to the <code style="background: var(--code-bg); padding: 2px 6px; border-radius: 4px; color: #1aab68;">portfolio/evidence/</code> folder and they will appear here.</p>
+      <a href="https://www.notion.so/Electricity-Consumption-Forecast-2e20b7017d5480799f10d0f7429510c9?source=copy_link" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: rgba(26,171,104,0.12); border: 1px solid rgba(26,171,104,0.3); border-radius: 8px; color: #42c584; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: background 0.2s, border-color 0.2s;" onmouseover="this.style.background='rgba(26,171,104,0.22)';this.style.borderColor='rgba(26,171,104,0.6)'" onmouseout="this.style.background='rgba(26,171,104,0.12)';this.style.borderColor='rgba(26,171,104,0.3)'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
+        Click for more details
+      </a>
+    </div>
+  </div>
+
+  <!-- Project 3 Modal -->
+  <div class="modal-overlay" id="modal-project3" onclick="if(event.target===this)closeModal()">
+    <div class="modal-content" style="position: relative;">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+      <span style="display: inline-block; padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; background: rgba(26,171,104,0.15); color: #42c584; margin-bottom: 16px;">PROJECT</span>
+      <h3 style="font-size: 1.4rem; font-weight: 700; color: var(--text-heading); margin-bottom: 8px;">Fraud Pattern Mining in E-Commerce Transactions</h3>
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 24px;">Python &bull; scikit-learn &bull; mlxtend &bull; XGBoost &bull; Random Forest &bull; FP-Growth &bull; Jupyter Notebook</p>
+
+      <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px;">
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <span style="color: #1aab68; margin-top: 3px; flex-shrink: 0;">&#9656;</span>
+          <p style="color: var(--modal-text); font-size: 0.9rem;">Analyzed 1.85M credit card transactions to mine interpretable fraud patterns using Association Rule Mining (FP-Growth) and Isolation Forest on a heavily imbalanced dataset (fraud rate: 0.52%).</p>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <span style="color: #1aab68; margin-top: 3px; flex-shrink: 0;">&#9656;</span>
+          <p style="color: var(--modal-text); font-size: 0.9rem;">Conducted end-to-end Exploratory Data Analysis across 23+ features; identified key fraud signals &mdash; transaction amount (AUC=0.834), nighttime activity (fraud rate 15&times; baseline), and high-risk merchant categories (shopping_net, misc_net).</p>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <span style="color: #1aab68; margin-top: 3px; flex-shrink: 0;">&#9656;</span>
+          <p style="color: var(--modal-text); font-size: 0.9rem;">Engineered key features (time-of-day, transaction amount bins, merchant category) and identified high-risk combinations &mdash; e.g., shopping_net &times; night &rarr; 4.2% fraud rate (8&times; baseline).</p>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <span style="color: #1aab68; margin-top: 3px; flex-shrink: 0;">&#9656;</span>
+          <p style="color: var(--modal-text); font-size: 0.9rem;">Built a hybrid detection model using Random Forest + XGBoost with class imbalance handling (SMOTE / class weighting), augmented by rule-based binary features derived from association rule mining results.</p>
+        </div>
       </div>
+
+      <div style="border-radius: 12px; overflow: hidden; margin-bottom: 20px;">
+        <img src="portfolio/evidence/prj3.png" alt="Fraud Detection Project" style="width: 100%; display: block; border-radius: 12px;" onerror="this.parentElement.style.display='none'" />
+      </div>
+
+      <a href="https://github.com/Ciss48/Fraud-Detection" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: rgba(26,171,104,0.12); border: 1px solid rgba(26,171,104,0.3); border-radius: 8px; color: #42c584; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: background 0.2s, border-color 0.2s;" onmouseover="this.style.background='rgba(26,171,104,0.22)';this.style.borderColor='rgba(26,171,104,0.6)'" onmouseout="this.style.background='rgba(26,171,104,0.12)';this.style.borderColor='rgba(26,171,104,0.3)'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        Click for more details
+      </a>
+    </div>
+  </div>
+
+  <!-- Project 4 Modal -->
+  <div class="modal-overlay" id="modal-project4" onclick="if(event.target===this)closeModal()">
+    <div class="modal-content" style="position: relative;">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+      <span style="display: inline-block; padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; background: rgba(26,171,104,0.15); color: #42c584; margin-bottom: 16px;">PROJECT</span>
+      <h3 style="font-size: 1.4rem; font-weight: 700; color: var(--text-heading); margin-bottom: 8px;">Personal Finance Management System</h3>
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 24px;">Python 3.11 &bull; FastAPI &bull; React (Vite) &bull; PostgreSQL (Supabase) &bull; Telegram Bot API &bull; Vercel</p>
+
+      <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px;">
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <span style="color: #1aab68; margin-top: 3px; flex-shrink: 0;">&#9656;</span>
+          <p style="color: var(--modal-text); font-size: 0.9rem;">Built a full-stack personal finance tracker with a Telegram bot as the primary input interface, allowing users to log expenses and income via natural-language messages (e.g., <em>150k food</em>, <em>+5 million March salary</em>).</p>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <span style="color: #1aab68; margin-top: 3px; flex-shrink: 0;">&#9656;</span>
+          <p style="color: var(--modal-text); font-size: 0.9rem;">Designed a 3-tier architecture: Telegram Bot &rarr; FastAPI REST backend &rarr; Supabase (PostgreSQL), with a React dashboard for data visualization.</p>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <span style="color: #1aab68; margin-top: 3px; flex-shrink: 0;">&#9656;</span>
+          <p style="color: var(--modal-text); font-size: 0.9rem;">Developed a FastAPI backend with RESTful endpoints for transaction CRUD, category management, and analytics (daily/monthly/category breakdowns), with auto-generated Swagger docs.</p>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <span style="color: #1aab68; margin-top: 3px; flex-shrink: 0;">&#9656;</span>
+          <p style="color: var(--modal-text); font-size: 0.9rem;">Built an interactive React dashboard for visualizing spending trends by day, month, and category.</p>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <span style="color: #1aab68; margin-top: 3px; flex-shrink: 0;">&#9656;</span>
+          <p style="color: var(--modal-text); font-size: 0.9rem;">Implemented smart category detection in the bot with inline button fallback when a category isn&rsquo;t auto-recognized.</p>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <span style="color: #1aab68; margin-top: 3px; flex-shrink: 0;">&#9656;</span>
+          <p style="color: var(--modal-text); font-size: 0.9rem;">Deployed the frontend to Vercel and configured the project with environment-based secrets management (.env).</p>
+        </div>
+      </div>
+
+      <div style="border-radius: 12px; overflow: hidden; margin-bottom: 20px;">
+        <img src="portfolio/evidence/prj4.png" alt="Personal Finance Management System" style="width: 100%; display: block; border-radius: 12px;" onerror="this.parentElement.style.display='none'" />
+      </div>
+
+      <a href="https://github.com/Ciss48/Finance_management" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: rgba(26,171,104,0.12); border: 1px solid rgba(26,171,104,0.3); border-radius: 8px; color: #42c584; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: background 0.2s, border-color 0.2s;" onmouseover="this.style.background='rgba(26,171,104,0.22)';this.style.borderColor='rgba(26,171,104,0.6)'" onmouseout="this.style.background='rgba(26,171,104,0.12)';this.style.borderColor='rgba(26,171,104,0.3)'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        Click for more details
+      </a>
     </div>
   </div>
 
